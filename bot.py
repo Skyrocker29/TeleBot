@@ -10,9 +10,6 @@ keyboard1.row('Привет', 'Работаем', 'Деньги нужны', 'Д
 def start_message(message):
 	bot.send_message(message.chat.id, 'Слушай меня, слушай!', reply_markup = keyboard1)
 
-@bot.message_handler(commands = ['Хайль Гидра'])
-def start_message(message):
-	bot.send_message(message.chat.id, 'Привет, ты написал мне /start', reply_markup = keyboard1)
 
 @bot.message_handler(content_types = ['text'])
 def send_text(message):
