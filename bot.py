@@ -4,15 +4,15 @@ import apiai, json
 
 bot = telebot.TeleBot(config.token)
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True)
-keyboard1.row('Привет', 'Пока', 'Хайль Гидра')
+keyboard1.row('Привет', 'Работаем', 'Как?')
 
 @bot.message_handler(commands = ['start'])
 def start_message(message):
-	bot.send_message(message.chat.id, 'Привет, ты написал мне /start', reply_markup = keyboard1)
+	bot.send_message(message.chat.id, 'Слушай меня, слушай!', reply_markup = keyboard1)
 
-@bot.message_handler(commands = ['Хайль Гидра'])
+@bot.message_handler(commands = ['Привет'])
 def start_message(message):
-	bot.send_message(message.chat.id, 'Привет, ты написал мне /start', reply_markup = keyboard1)
+	bot.send_message(message.chat.id, 'Как обстановка?', reply_markup = keyboard1)
 
 @bot.message_handler(content_types = ['text'])
 def send_text(message):
