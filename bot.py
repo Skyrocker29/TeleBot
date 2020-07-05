@@ -23,7 +23,7 @@ def send_text(message):
 	if message.text.lower() == 'привет':
 		bot.send_message(message.chat.id, 'Привет, ')
 	elif message.text.lower() == 'пока':
-		bot.send_message(message.chat.id, 'Прощай, Санек.')
+		bot.send_message(message.chat.id, 'Прощай, Санек..')
 	elif message.text.lower() == 'люблю':
 		bot.send_sticker(message.chat.id, 'CAACAgIAAxkBAAMoXujAVuiydTSBFOD2suwkrPm49NUAAkgDAALGzGMCF5HWtlHzZjIaBA')
 	else:
