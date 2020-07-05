@@ -4,9 +4,13 @@ import apiai, json
 
 bot = telebot.TeleBot(config.token)
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True)
-keyboard1.row('Привет', 'Пока')
+keyboard1.row('Привет', 'Пока', 'Хайль Гидра')
 
 @bot.message_handler(commands = ['start'])
+def start_message(message):
+	bot.send_message(message.chat.id, 'Привет, ты написал мне /start', reply_markup = keyboard1)
+
+@bot.message_handler(commands = ['Хайль Гидра'])
 def start_message(message):
 	bot.send_message(message.chat.id, 'Привет, ты написал мне /start', reply_markup = keyboard1)
 
@@ -14,9 +18,10 @@ def start_message(message):
 def send_text(message):
 	request = apiai.ApiAI('bc05779f82f04e249c5d7011739abe62').text_request()
 	request.lang = 'ru'
+
 	request.session_id = 'TestBot'
 	if message.text.lower() == 'привет':
-		bot.send_message(message.chat.id, 'Привет, мой дружище!')
+		bot.send_message(message.chat.id, 'Привет, ')
 	elif message.text.lower() == 'пока':
 		bot.send_message(message.chat.id, 'Прощай, Санек.')
 	elif message.text.lower() == 'люблю':
