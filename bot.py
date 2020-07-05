@@ -21,7 +21,7 @@ def send_text(message):
 
 	request.session_id = 'TestBot'
 	if message.text.lower() == 'привет':
-		bot.send_message(message.chat.id, 'Привет, друг!')
+		bot.send_message(message.chat.id, 'Привет, друг!!!')
 	elif message.text.lower() == 'пока':
 		bot.send_message(message.chat.id, 'Прощай, Санек..')
 	elif message.text.lower() == 'люблю':
