@@ -10,7 +10,6 @@ keyboard1.row('Привет', 'Работаем', 'Деньги нужны', 'Д
 def start_message(message):
 	bot.send_message(message.chat.id, 'Слушай меня, слушай!', reply_markup = keyboard1)
 
-
 @bot.message_handler(content_types = ['text'])
 def send_text(message):
 	request = apiai.ApiAI('bc05779f82f04e249c5d7011739abe62').text_request()
@@ -34,7 +33,7 @@ def send_text(message):
 		else:
 			bot.send_message(message.chat.id, 'Ну что ты мне даешь епона мать?!')
 
-@bot.message_handler(content_types = ['sticker'])
+#@bot.message_handler(content_types = ['sticker'])
 def send_id_sticker(message):
 	print(message)
 
