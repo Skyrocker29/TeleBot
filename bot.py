@@ -24,7 +24,7 @@ def send_text(message):
 		request.query = message.text
 		responseJson = json.loads(request.getresponse().read().decode('utf-8'))
 		response = responseJson['result']['fulfillment']['speech'] # Разбираем JSON и вытаскиваем ответ
-	request.session_id = 'TestBot'
+	request.session_id = 'TestBot2'
 	if message.text.lower() == 'деньги нужны':
 		bot.send_sticker(message.chat.id, 'Как? Послушай меня, послушай! Деньги это грязь!')
 	elif message.text.lower() == 'до свидания':
