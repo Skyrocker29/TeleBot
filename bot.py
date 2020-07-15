@@ -20,7 +20,12 @@ def send_text(message):
 		bot.send_message(message.chat.id, 'Как обстановка? Всё в порядке?')
 	elif message.text.lower() == 'работаем':
 		bot.send_message(message.chat.id, 'Помощь нужна? Часа хватит?')
-	elif message.text.lower() == 'деньги нужны':
+	else:
+		request.query = message.text
+		responseJson = json.loads(request.getresponse().read().decode('utf-8'))
+		response = responseJson['result']['fulfillment']['speech'] # Разбираем JSON и вытаскиваем ответ
+	request.session_id = 'TestBot'
+	if message.text.lower() == 'деньги нужны':
 		bot.send_sticker(message.chat.id, 'Как? Послушай меня, послушай! Деньги это грязь!')
 	elif message.text.lower() == 'до свидания':
 		bot.send_sticker(message.chat.id, 'До завтра, мужики!')
