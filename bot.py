@@ -4,7 +4,7 @@ import apiai, json
 
 bot = telebot.TeleBot(config.token)
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True)
-keyboard1.row('Привет', 'Работаем', 'Деньги_нужны', 'До_свидания')
+keyboard1.row('Привет', 'Работаем', 'Деньгинужны', 'Досвидания')
 
 @bot.message_handler(commands = ['start'])
 def start_message(message):
@@ -20,9 +20,9 @@ def send_text(message):
 		bot.send_message(message.chat.id, 'Как обстановка? Всё в порядке?')
 	elif message.text.lower() == 'работаем':
 		bot.send_message(message.chat.id, 'Помощь нужна? Часа хватит?')
-	elif message.text.lower() == r'деньги_нужны':
+	elif message.text.lower() == 'деньгинужны':
 		bot.send_sticker(message.chat.id, 'Как? Послушай меня, послушай! Деньги это грязь!')
-	elif message.text.lower() == r'до_свидания':
+	elif message.text.lower() == 'досвидания':
 		bot.send_sticker(message.chat.id, 'До завтра, мужики!')
 	else:
 		request.query = message.text
