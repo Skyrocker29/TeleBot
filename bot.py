@@ -28,10 +28,10 @@ def send_text(message):
 		request.query = message.text
 		responseJson = json.loads(request.getresponse().read().decode('utf-8'))
 		response = responseJson['result']['fulfillment']['speech'] # Разбираем JSON и вытаскиваем ответ
-		if response:
-			bot.send_message(message.chat.id, response)
-		else:
-			bot.send_message(message.chat.id, 'Ну что ты мне даешь епона мать?!')
+	if response:
+		bot.send_message(message.chat.id, response)
+	else:
+		bot.send_message(message.chat.id, 'Ну что ты мне даешь епона мать?!')
 
 #@bot.message_handler(content_types = ['sticker'])
 def send_id_sticker(message):
