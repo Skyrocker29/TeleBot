@@ -17,7 +17,7 @@ def send_text(message):
 
 	request.session_id = 'TestBot'
 	if message.text.lower() == 'привет':
-		bot.send_voice(message.file.id, 'Как обстановка? Всё в порядке?')
+		bot.send_message(message.chat.id, 'Как обстановка? Всё в порядке?')
 	elif message.text.lower() == 'это невозможно':
 		bot.send_message(message.chat.id, 'Ну выподумайте, подумайте! Я вам в интернете все что хотите могу найти!')
 	elif message.text.lower() == 'работаем':
